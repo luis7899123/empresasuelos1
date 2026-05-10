@@ -11,9 +11,10 @@ app = Flask(__name__)
 app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
-
-app.config["MAIL_USERNAME"] = "luiscm520@gmail.com"
-app.config["MAIL_PASSWORD"] = "taxzoirfwmkcryik"
+app.config["MAIL_USERNAME"] = os.getenv("MAIL_USERNAME")
+app.config["MAIL_PASSWORD"] = os.getenv("MAIL_PASSWORD")
+app.config["MAIL_DEFAULT_SENDER"] = os.getenv("MAIL_USERNAME")
+app.config["MAIL_TIMEOUT"] = 15
 
 mail = Mail(app)
 
@@ -45,18 +46,18 @@ def proyectos():
 def contacto():
 
     if request.method == "POST":
-        nombre = request.form["nombre"]
-        correo = request.form["correo"]
-        telefono = request.form["telefono"]
-        mensaje = request.form["mensaje"]
+        try:
+            nombre = request.form["nombre"]
+            correo = request.form["correo"]
+            telefono = request.form["telefono"]
+            mensaje = request.form["mensaje"]
 
-        msg = Message(
-            subject="Nuevo mensaje desde la página web",
-            sender=app.config["MAIL_USERNAME"],
-            recipients=["luiscm530@gmail.com"]
-        )
+            msg = Message(
+                subject="Nuevo mensaje desde la página web",
+                recipients=["luiscm530@gmail.com"]
+            )
 
-        msg.body = f"""
+            msg.body = f"""
 NUEVO MENSAJE WEB
 
 Nombre:
@@ -72,9 +73,13 @@ Mensaje:
 {mensaje}
 """
 
-        mail.send(msg)
+            mail.send(msg)
 
-        return redirect("/contacto")
+            return redirect("/contacto")
+
+        except Exception as e:
+            print("ERROR AL ENVIAR CORREO:", e)
+            return f"Error al enviar correo: {e}", 500
 
     return render_template("contacto.html")
 
