@@ -821,11 +821,3 @@ a {
     transform: translateY(-1px);
 }
 
-/* LIBRO MENU */
-.link-libro {
-    position: relative;
-}
-
-.link-libro i {
-    color: #ff4c1e;
-}
