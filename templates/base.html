@@ -1,135 +1,538 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Empresa de Suelos y Pavimentos{% endblock %}</title>
 
+    <title>
+        {% block title %}
+        Corporación Puerta Grande E.I.R.L.
+        {% endblock %}
+    </title>
+
+    <!-- CSS GLOBAL -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- FUENTE -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     {% block head_extra %}{% endblock %}
 </head>
 
 <body>
 
-    <!-- BARRA SUPERIOR -->
-    <div class="top-bar">
-        <div class="top-left">
-            <span><i class="fas fa-phone"></i> 975 457 825 / 920 493 433 / 978 062 723</span>
-            <span><i class="fas fa-envelope"></i> cpgsuelosypavimentos@gmail.com</span>
-            <span><i class="fas fa-location-dot"></i> Chiclayo, Lambayeque · Cobertura nacional</span>
-        </div>
+<!-- =========================================
+     BARRA SUPERIOR
+========================================= -->
+<div class="top-bar">
 
-        <div class="top-right">
-            <img src="{{ url_for('static', filename='img/facebook.png') }}" alt="Facebook">
-            <img src="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram">
-            <img src="{{ url_for('static', filename='img/tiktok.png') }}" alt="TikTok">
-        </div>
+    <div class="top-left">
+
+        <span class="telefonos-top">
+
+            <i class="fas fa-phone"></i>
+
+            <span>975 457 825</span>
+
+            <span class="separador">|</span>
+
+            <span>978 062 723</span>
+
+            <span class="separador">|</span>
+
+            <a href="https://wa.me/51920493433?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Corporaci%C3%B3n%20Puerta%20Grande%20E.I.R.L.%20Deseo%20solicitar%20informaci%C3%B3n%20o%20una%20cotizaci%C3%B3n%20sobre%20sus%20servicios."
+               target="_blank"
+               class="link-whatsapp">
+
+                <i class="fab fa-whatsapp"></i>
+                920 493 433
+
+            </a>
+
+        </span>
+
+        <span>
+            <i class="fas fa-envelope"></i>
+            cpgsuelosypavimentos@gmail.com
+        </span>
+
+        <span>
+            <i class="fas fa-location-dot"></i>
+            Chiclayo, Lambayeque · Cobertura nacional
+        </span>
+
     </div>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
+    <!-- REDES -->
+    <div class="top-right">
 
-        <div class="menu-toggle" onclick="toggleMenu(event)">
-            <i class="fas fa-bars"></i>
-        </div>
+        <a href="https://www.facebook.com/profile.php?id=61564776177893"
+           target="_blank"
+           aria-label="Facebook">
 
-        <div class="logo">
-            <img src="{{ url_for('static', filename='img/logo1.png') }}" alt="Logo">
-        </div>
+            <img src="{{ url_for('static', filename='img/facebook.png') }}"
+                 alt="Facebook">
 
-        <nav id="menuNav">
-            <a href="/" class="{% if request.path == '/' %}active{% endif %}">Inicio</a>
-            <a href="/nosotros" class="{% if request.path == '/nosotros' %}active{% endif %}">Nosotros</a>
-            <a href="/servicios" class="{% if request.path == '/servicios' %}active{% endif %}">Servicios</a>
-            <a href="/proyectos" class="{% if request.path == '/proyectos' %}active{% endif %}">Proyectos</a>
-            <a href="/contacto" class="{% if request.path == '/contacto' %}active{% endif %}">Contáctanos</a>
-        </nav>
+        </a>
 
-        <button class="btn-intranet">INTRANET</button>
-    </header>
+        <a href="https://www.instagram.com/cpgsuelosypavimentos"
+           target="_blank"
+           aria-label="Instagram">
 
-    <!-- CONTENIDO -->
-    {% block content %}{% endblock %}
+            <img src="{{ url_for('static', filename='img/instagram.png') }}"
+                 alt="Instagram">
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <h2>Contacto</h2>
+        </a>
 
-        <div class="footer-content">
+        <a href="https://www.tiktok.com/@corp.puerta.grand?_r=1&_t=ZS-95nPMGA1VbA"
+           target="_blank"
+           aria-label="TikTok">
 
-            <div class="item">
-                <i class="fas fa-building"></i>
-                CORPORACION PUERTA GRANDE E.I.R.L.
-            </div>
+            <img src="{{ url_for('static', filename='img/tiktok.png') }}"
+                 alt="TikTok">
 
-            <div class="item">
-                <i class="fas fa-id-card"></i>
-                RUC: 20601519390
-            </div>
+        </a>
 
-            <div class="item">
-                <i class="fas fa-check-circle"></i>
-                Estado: Activo
-            </div>
+    </div>
 
-            <div class="item">
-                <i class="fas fa-calendar"></i>
-                Inicio: 21/09/2016
-            </div>
+</div>
 
-            <div class="item">
-                <i class="fas fa-map-marker-alt"></i>
-                Mza. B1 Lote 12 - Chiclayo, Lambayeque
-            </div>
+<!-- =========================================
+     NAVBAR
+========================================= -->
+<header class="navbar">
 
-            <div class="item">
-                <i class="fas fa-globe"></i>
-                Perú
-            </div>
+    <!-- BOTÓN MÓVIL -->
+    <div class="menu-toggle" onclick="toggleMenu(event)">
+        <i class="fas fa-bars"></i>
+    </div>
 
-            <div class="item">
-                <i class="fas fa-phone"></i>
-                975 457 825 / 920 493 433 / 978 062 723
-            </div>
+    <!-- LOGO -->
+    <a href="/" class="logo">
 
-            <div class="item">
-                <i class="fas fa-envelope"></i>
-                cpgsuelosypavimentos@gmail.com
-            </div>
+        <img src="{{ url_for('static', filename='img/logo.png') }}"
+             alt="Corporación Puerta Grande E.I.R.L."
+             class="logo-img">
+
+        <div class="logo-texto">
+
+            <h1>CORPORACIÓN</h1>
+
+            <h2>PUERTA GRANDE</h2>
+
+            <span class="logo-linea">
+                ────── E.I.R.L. ──────
+            </span>
 
         </div>
-    </footer>
 
-    <!-- WHATSAPP -->
-    <a href="https://wa.me/51975457825" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <script>
-        function toggleMenu(event) {
-            event.stopPropagation();
+    <!-- MENÚ -->
+    <!-- MENÚ -->
+<nav id="menuNav">
 
-            const nav = document.querySelector(".navbar nav");
-            nav.classList.toggle("active");
+    <a href="/"
+       class="{% if request.path == '/' %}active{% endif %}">
+
+        <i class="fas fa-house"></i>
+        Inicio
+
+    </a>
+
+    <a href="/nosotros"
+       class="{% if request.path == '/nosotros' %}active{% endif %}">
+
+        <i class="fas fa-building"></i>
+        Nosotros
+
+    </a>
+
+    <a href="/servicios"
+       class="{% if request.path == '/servicios' %}active{% endif %}">
+
+        <i class="fas fa-flask"></i>
+        Servicios
+
+    </a>
+
+    <a href="/proyectos"
+       class="{% if request.path == '/proyectos' %}active{% endif %}">
+
+        <i class="fas fa-diagram-project"></i>
+        Proyectos
+
+    </a>
+
+    <a href="/contacto"
+       class="{% if request.path == '/contacto' %}active{% endif %}">
+
+        <i class="fas fa-envelope-open-text"></i>
+        Contáctanos
+
+    </a>
+
+    <a href="/libro-reclamaciones"
+       class="{% if request.path == '/libro-reclamaciones' %}active{% endif %} link-libro">
+
+        <i class="fas fa-book-open"></i>
+        Libro de Reclamaciones
+
+    </a>
+
+</nav>
+
+  
+    <!-- BOTÓN -->
+    <button class="btn-intranet">
+        INTRANET
+    </button>
+
+</header>
+
+<!-- =========================================
+     CONTENIDO
+========================================= -->
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="footer">
+
+    <!-- TOP -->
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <h2>
+                CORPORACIÓN PUERTA GRANDE E.I.R.L.
+            </h2>
+
+            <p>
+                Empresa especializada en ingeniería,
+                estudios geotécnicos, pavimentos,
+                asfaltado, ensayos de laboratorio
+                y control de calidad para proyectos
+                de infraestructura vial,
+                edificaciones y saneamiento.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- GRID -->
+    <div class="footer-content">
+
+        <!-- OFICINA -->
+        <div class="item">
+
+            <i class="fas fa-building"></i>
+
+            <div>
+
+                <h4>Oficina Principal</h4>
+
+                <span>
+                    Res. Derrama Magisterial Mz B1,
+                    Lote 12 - Chiclayo
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- SUCURSAL 1 -->
+        <div class="item">
+
+            <i class="fas fa-map-marker-alt"></i>
+
+            <div>
+
+                <h4>Sucursal 1</h4>
+
+                <span>
+                    Jr. Zarumilla 374,
+                    Santa Cruz - Cajamarca
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- SUCURSAL 2 -->
+        <div class="item">
+
+            <i class="fas fa-map-marker-alt"></i>
+
+            <div>
+
+                <h4>Sucursal 2</h4>
+
+                <span>
+                    Cas. La Pauca S/N,
+                    Pulán - Santa Cruz - Cajamarca
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- TELÉFONOS -->
+        <div class="item">
+
+            <i class="fas fa-phone"></i>
+
+            <div>
+
+                <h4>Teléfonos</h4>
+
+                <div class="footer-telefonos">
+
+                    <span>
+                        975 457 825 | 978 062 723
+                    </span>
+
+                </div>
+
+                <div class="footer-whatsapp-box">
+
+                    <a href="https://wa.me/51920493433?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Corporaci%C3%B3n%20Puerta%20Grande%20E.I.R.L.%20Deseo%20solicitar%20informaci%C3%B3n%20o%20una%20cotizaci%C3%B3n%20sobre%20sus%20servicios."
+                       target="_blank"
+                       class="footer-whatsapp">
+
+                        <i class="fab fa-whatsapp"></i>
+
+                        <span>
+                            WhatsApp: 920 493 433
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CORREO -->
+        <div class="item">
+
+            <i class="fas fa-envelope"></i>
+
+            <div>
+
+                <h4>Correo</h4>
+
+                <span>
+                    cpgsuelosypavimentos@gmail.com
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- COBERTURA -->
+        <div class="item">
+
+            <i class="fas fa-globe"></i>
+
+            <div>
+
+                <h4>Cobertura</h4>
+
+                <span>
+                    Atención y cobertura nacional
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- ESPECIALIDAD -->
+        <div class="item">
+
+            <i class="fas fa-flask"></i>
+
+            <div>
+
+                <h4>Especialidad</h4>
+
+                <span>
+                    Ensayos de materiales y laboratorio
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- CONTROL -->
+        <div class="item">
+
+            <i class="fas fa-hard-hat"></i>
+
+            <div>
+
+                <h4>Control de Calidad</h4>
+
+                <span>
+                    Supervisión y control técnico en obra
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- REDES -->
+        <div class="item">
+
+            <i class="fas fa-share-nodes"></i>
+
+            <div>
+
+                <h4>Redes Sociales</h4>
+
+                <div class="footer-social">
+
+                    <a href="https://www.facebook.com/profile.php?id=61564776177893"
+                       target="_blank"
+                       aria-label="Facebook">
+
+                        <i class="fab fa-facebook-f"></i>
+
+                    </a>
+
+                    <a href="https://www.instagram.com/cpgsuelosypavimentos"
+                       target="_blank"
+                       aria-label="Instagram">
+
+                        <i class="fab fa-instagram"></i>
+
+                    </a>
+
+                    <a href="https://www.tiktok.com/@corp.puerta.grand?_r=1&_t=ZS-95nPMGA1VbA"
+                       target="_blank"
+                       aria-label="TikTok">
+
+                        <i class="fab fa-tiktok"></i>
+
+                    </a>
+
+                    <a href="https://wa.me/51920493433"
+                       target="_blank"
+                       aria-label="WhatsApp">
+
+                        <i class="fab fa-whatsapp"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- LIBRO -->
+        <div class="item libro-reclamaciones">
+
+            <i class="fas fa-book"></i>
+
+            <div>
+
+                <h4>Libro de Reclamaciones</h4>
+
+               
+
+                <a href="/libro-reclamaciones"
+                   class="btn-libro">
+
+                    Registrar reclamo
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER BOTTOM -->
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Corporación Puerta Grande E.I.R.L.
+            Todos los derechos reservados.
+        </p>
+
+    </div>
+
+</footer>
+
+<!-- =========================================
+     WHATSAPP FLOTANTE
+========================================= -->
+<a href="https://wa.me/51920493433?text=Hola%2C%20vengo%20desde%20la%20p%C3%A1gina%20web%20de%20Corporaci%C3%B3n%20Puerta%20Grande%20E.I.R.L.%20Deseo%20solicitar%20informaci%C3%B3n%20o%20una%20cotizaci%C3%B3n%20sobre%20sus%20servicios."
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="WhatsApp">
+
+    <i class="fab fa-whatsapp"></i>
+
+</a>
+
+<!-- =========================================
+     SCRIPT MENÚ
+========================================= -->
+<script>
+
+    function toggleMenu(event) {
+
+        event.stopPropagation();
+
+        const nav = document.querySelector(".navbar nav");
+
+        nav.classList.toggle("active");
+    }
+
+    document.addEventListener("click", function(event) {
+
+        const nav = document.querySelector(".navbar nav");
+
+        const toggle = document.querySelector(".menu-toggle");
+
+        if (
+            !nav.contains(event.target)
+            &&
+            !toggle.contains(event.target)
+        ) {
+            nav.classList.remove("active");
         }
 
-        document.addEventListener("click", function(event) {
-            const nav = document.querySelector(".navbar nav");
-            const toggle = document.querySelector(".menu-toggle");
+    });
 
-            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
-                nav.classList.remove("active");
-            }
+    document.querySelectorAll(".navbar nav a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            document.querySelector(".navbar nav")
+                .classList.remove("active");
+
         });
 
-        document.querySelectorAll(".navbar nav a").forEach(function(link) {
-            link.addEventListener("click", function() {
-                document.querySelector(".navbar nav").classList.remove("active");
-            });
-        });
-    </script>
+    });
+
+</script>
 
 </body>
 </html>

@@ -1,39 +1,19 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Contacto - Empresa</title>
+{% extends "base.html" %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/contacto.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+{% block title %}Contacto - Empresa de Suelos y Pavimentos{% endblock %}
 
-<body>
+{% block head_extra %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contacto.css') }}">
+{% endblock %}
 
-<!-- NAVBAR (igual que inicio) -->
-<header class="navbar">
-    <div class="logo">
-        <img src="{{ url_for('static', filename='img/logo1.png') }}">
-    </div>
+{% block content %}
 
-    <nav>
-        <a href="/">Inicio</a>
-        <a href="#">Nosotros</a>
-        <a href="/servicios">Servicios</a>
-        <a href="#">Proyectos</a>
-        <a href="/contacto">Contáctanos</a>
-    </nav>
-</header>
-
-<!-- CONTACTO -->
 <section class="section contacto">
 
     <h1>Contáctanos</h1>
 
     <div class="contacto-container">
 
-        <!-- IZQUIERDA: INFORMACIÓN -->
         <div class="contacto-info">
 
             <h2>Datos de la Empresa</h2>
@@ -47,17 +27,32 @@
 
         </div>
 
-        <!-- DERECHA: FORMULARIO -->
         <div class="contacto-form">
 
             <h2>Envíanos un mensaje</h2>
 
-            <form>
-                <input type="text" placeholder="Nombre completo" required>
-                <input type="email" placeholder="Correo electrónico" required>
-                <input type="text" placeholder="Teléfono">
-                <textarea placeholder="Escribe tu mensaje..." required></textarea>
+            <form method="POST">
+
+                <input type="text"
+                       name="nombre"
+                       placeholder="Nombre completo"
+                       required>
+
+                <input type="email"
+                       name="correo"
+                       placeholder="Correo electrónico"
+                       required>
+
+                <input type="text"
+                       name="telefono"
+                       placeholder="Teléfono">
+
+                <textarea name="mensaje"
+                          placeholder="Escribe tu mensaje..."
+                          required></textarea>
+
                 <button type="submit">Enviar mensaje</button>
+
             </form>
 
         </div>
@@ -66,10 +61,4 @@
 
 </section>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/51975457825" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-</body>
-</html>
+{% endblock %}
