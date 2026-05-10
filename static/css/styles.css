@@ -145,7 +145,7 @@ a {
 }
 
 .logo-texto h1 {
-    font-size: 13px;
+    font-size: 11px;
     color: #063b46;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
@@ -156,7 +156,7 @@ a {
 }
 
 .logo-texto h2 {
-    font-size: 14px;
+    font-size: 12px;
     color: #063b46;
     font-family: 'Montserrat', sans-serif;
     font-weight: 850;
@@ -168,7 +168,7 @@ a {
 
 .logo-linea {
     margin: 0;
-    font-size: 14px;
+    font-size: 12px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #063b46;
