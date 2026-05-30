@@ -24,30 +24,21 @@ body {
     padding: 60px 24px;
     color: white;
     overflow: hidden;
+
+    animation: heroFade 0.9s ease-out both;
 }
 
-.servicios-hero::before {
-    content: "";
-    position: absolute;
-    width: 620px;
-    height: 620px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 50%;
-    top: -260px;
-    right: -180px;
+/* animación limpia y profesional */
+@keyframes heroFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.servicios-hero::after {
-    content: "";
-    position: absolute;
-    width: 420px;
-    height: 420px;
-    background: rgba(255,76,30,0.10);
-    border-radius: 50%;
-    bottom: -220px;
-    left: -130px;
-}
-
+/* contenido con entrada escalonada suave */
 .servicios-hero-content {
     position: relative;
     z-index: 2;
@@ -66,6 +57,8 @@ body {
     border-radius: 40px;
     margin-bottom: 18px;
     backdrop-filter: blur(5px);
+
+    animation: itemUp 0.6s ease-out 0.15s both;
 }
 
 .servicios-hero-content h1 {
@@ -74,6 +67,8 @@ body {
     margin-bottom: 18px;
     color: white;
     text-shadow: 0 6px 20px rgba(0,0,0,0.35);
+
+    animation: itemUp 0.7s ease-out 0.25s both;
 }
 
 .servicios-hero-content p {
@@ -82,6 +77,20 @@ body {
     max-width: 780px;
     margin: auto;
     color: #ecf7fa;
+
+    animation: itemUp 0.8s ease-out 0.35s both;
+}
+
+/* animación principal de texto */
+@keyframes itemUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* MENÚ DE SERVICIOS */

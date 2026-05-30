@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Intranet | Corporación Puerta Grande E.I.R.L.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <div class="login-box">
+
+        <!-- LOGO + TEXTO EN FILA -->
+        <div class="logo-header">
+            
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+
+            <div class="company">
+                <div>CORPORACIÓN</div>
+                <div>PUERTA GRANDE</div>
+                <div class="eirl">E.I.R.L.</div>
+            </div>
+
+        </div>
+        <h2>Intranet Corporativa</h2>
+        <p>Acceso exclusivo al sistema interno</p>
+
+        {% if error %}
+        <div class="error-box">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <form method="POST" action="/login">
+
+            <label>Usuario</label>
+            <input type="text" name="username" placeholder="Ingrese usuario" required>
+
+            <label>Contraseña</label>
+            <input type="password" name="password" placeholder="Ingrese contraseña" required>
+
+            <button type="submit">Ingresar</button>
+
+        </form>
+
+        <!-- FOOTER -->
+        <div class="footer-login">
+            © 2026 Corporación Puerta Grande E.I.R.L. Todos los derechos reservados.
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

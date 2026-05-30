@@ -58,50 +58,51 @@
 
         </span>
 
-        <span>
-            <i class="fas fa-envelope"></i>
-            cpgsuelosypavimentos@gmail.com
-        </span>
+        <a href="/contacto" class="email-link">
 
-        <span>
-            <i class="fas fa-location-dot"></i>
-            Chiclayo, Lambayeque · Cobertura nacional
-        </span>
+    <span>
+        <i class="fas fa-envelope"></i>
+        cpgsuelosypavimentos@gmail.com
+    </span>
+
+</a>
+
+       <a href="https://www.google.com/maps/search/?api=1&query=Res.+Derrama+Magisterial+Mz+B1,+Lote+12+-+Chiclayo"
+   target="_blank"
+   class="location-link">
+
+    <span>
+        <i class="fas fa-location-dot"></i>
+        Chiclayo, Lambayeque · Cobertura nacional
+    </span>
+
+</a>
 
     </div>
 
     <!-- REDES -->
-    <div class="top-right">
+   <!-- REDES -->
+<div class="top-right">
 
-        <a href="https://www.facebook.com/profile.php?id=61564776177893"
-           target="_blank"
-           aria-label="Facebook">
+    <a href="https://www.facebook.com/profile.php?id=61564776177893"
+       target="_blank"
+       aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
 
-            <img src="{{ url_for('static', filename='img/facebook.png') }}"
-                 alt="Facebook">
+    <a href="https://www.instagram.com/cpgsuelosypavimentos"
+       target="_blank"
+       aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
 
-        </a>
+    <a href="https://www.tiktok.com/@corp.puerta.grand?_r=1&_t=ZS-95nPMGA1VbA"
+       target="_blank"
+       aria-label="TikTok">
+        <i class="fab fa-tiktok"></i>
+    </a>
 
-        <a href="https://www.instagram.com/cpgsuelosypavimentos"
-           target="_blank"
-           aria-label="Instagram">
-
-            <img src="{{ url_for('static', filename='img/instagram.png') }}"
-                 alt="Instagram">
-
-        </a>
-
-        <a href="https://www.tiktok.com/@corp.puerta.grand?_r=1&_t=ZS-95nPMGA1VbA"
-           target="_blank"
-           aria-label="TikTok">
-
-            <img src="{{ url_for('static', filename='img/tiktok.png') }}"
-                 alt="TikTok">
-
-        </a>
-
-    </div>
-
+</div>
 </div>
 
 <!-- =========================================
@@ -127,9 +128,7 @@
 
             <h2>PUERTA GRANDE</h2>
 
-            <span class="logo-linea">
-                ───── E.I.R.L. ─────
-            </span>
+            <span class="logo-linea">E.I.R.L.</span>
 
         </div>
 
@@ -176,21 +175,15 @@
 
     </a>
 
-    <a href="/libro-reclamaciones"
-       class="{% if request.path == '/libro-reclamaciones' %}active{% endif %} link-libro">
-
-       
-        Libro de Reclamaciones
-
-    </a>
+   
+    
 
 </nav>
 
   
-    <!-- BOTÓN -->
-    <button class="btn-intranet">
-        INTRANET
-    </button>
+ <a href="/login" class="btn-intranet" target="_blank">
+    INTRANET
+</a>
 
 </header>
 
@@ -374,22 +367,7 @@
 
         </div>
 
-        <!-- CONTROL -->
-        <div class="item">
-
-            <i class="fas fa-hard-hat"></i>
-
-            <div>
-
-                <h4>Control de Calidad</h4>
-
-                <span>
-                    Supervisión y control técnico en obra
-                </span>
-
-            </div>
-
-        </div>
+       
 
         <!-- REDES -->
         <div class="item">
@@ -440,28 +418,8 @@
 
         </div>
 
-        <!-- LIBRO -->
-        <div class="item libro-reclamaciones">
-
-            <i class="fas fa-book"></i>
-
-            <div>
-
-                <h4>Libro de Reclamaciones</h4>
-
-               
-
-                <a href="/libro-reclamaciones"
-                   class="btn-libro">
-
-                    Registrar reclamo
-
-                </a>
-
-            </div>
-
-        </div>
-
+       
+           
     </div>
 
     <!-- FOOTER BOTTOM -->

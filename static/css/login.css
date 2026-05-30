@@ -1,0 +1,309 @@
+/* =========================
+   LOGIN ERP MODERNO FULL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: url("../img/principal.jpg") center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+/* overlay elegante oscuro */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left,
+       
+    );
+}
+
+/* luz decorativa suave */
+body::after {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: rgba(255, 76, 30, 0.08);
+    border-radius: 50%;
+    top: -200px;
+    left: -200px;
+    filter: blur(120px);
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.login-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 440px;
+    padding: 20px;
+}
+
+/* =========================
+   CARD LOGIN
+========================= */
+.login-box {
+    background: rgba(18, 40, 70, 0.45);
+    backdrop-filter: blur(22px);
+
+    border: 1px solid rgba(140, 190, 255, 0.25);
+    border-radius: 24px;
+
+    padding: 38px;
+
+    box-shadow:
+        0 28px 85px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(140, 190, 255, 0.10);
+
+    animation: fadeUp 0.8s ease;
+}
+.error-box {
+    background: rgba(255, 60, 60, 0.12);
+    border: 1px solid rgba(255, 80, 80, 0.35);
+
+    color: #ff4d4d;
+
+    padding: 10px 12px;
+    border-radius: 10px;
+
+    font-size: 13px;
+    text-align: center;
+
+    margin-bottom: 14px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
+    animation: fadeUp 0.4s ease;
+}
+/* =========================
+   LOGO + EMPRESA
+========================= */
+.logo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+/* logo */
+.logo-header img {
+    width: 85px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.5));
+}
+
+/* texto empresa */
+.company {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.05;
+    text-align: left;
+    color: #ffffff;
+}
+
+/* líneas principales */
+.company div {
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+/* =========================
+   E.I.R.L (CON LÍNEAS)
+========================= */
+.company .eirl {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    margin-top: 4px;
+    color: rgba(255, 255, 255, 0.998);
+}
+
+/* líneas decorativas */
+.company .eirl::before,
+.company .eirl::after {
+    content: "";
+    width: 30px;
+    height: 1px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgb(255, 255, 255),
+        transparent
+    );
+}
+
+/* =========================
+   TITULO
+========================= */
+h2 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+p {
+    color: rgba(255,255,255,0.65);
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   INPUTS
+========================= */
+label {
+    display: block;
+    color: rgba(255,255,255,0.8);
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+input {
+    width: 100%;
+    padding: 13px 14px;
+
+    margin-bottom: 14px;
+
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.10);
+
+    background: rgba(0,0,0,0.35);
+    color: white;
+
+    font-size: 14px;
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+input::placeholder {
+    color: rgba(255,255,255,0.35);
+}
+
+input:focus {
+    border-color: rgba(255, 76, 30, 0.8);
+    box-shadow: 0 0 0 4px rgba(255,76,30,0.15);
+}
+
+/* =========================
+   BOTÓN
+========================= */
+button {
+    width: 100%;
+    padding: 13px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #ff4c1e, #ff2f00);
+    color: white;
+
+    font-weight: 600;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+    box-shadow: 0 10px 25px rgba(255, 76, 30, 0.25);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255, 76, 30, 0.35);
+}
+
+/* =========================
+   LINKS
+========================= */
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+    font-size: 12px;
+}
+
+.links a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.links a:hover {
+    color: #fff;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer-login {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+/* =========================
+   ANIMACIÓN
+========================= */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+    .login-box {
+        padding: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .logo-header img {
+        width: 75px;
+    }
+}

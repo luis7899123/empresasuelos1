@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}Proyectos Ejecutados{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/proyecto.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO PREMIUM ================= -->
+<section class="hero-premium">
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            Ingeniería • Construcción • Supervisión
+        </span>
+
+        <h1 class="banner-animado">
+            Construimos infraestructura que impulsa el desarrollo del país
+        </h1>
+
+        <p class="texto-animado">
+            Ejecutamos proyectos de infraestructura vial, saneamiento,
+            edificaciones e instituciones educativas con altos estándares de
+            calidad, seguridad y cumplimiento.
+        </p>
+
+        <div class="hero-botones">
+            <a href="#proyectos" class="btn-principal">
+                Ver Proyectos
+            </a>
+
+            <a href="#contacto" class="btn-secundario">
+                Solicitar Información
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTENIDO ================= -->
+<section class="section" id="proyectos">
+
+    <div class="proyectos-layout">
+
+        <!-- ================= IZQUIERDA: FOTOS ================= -->
+        <div class="proyectos-fotos">
+
+            <img src="{{ url_for('static', filename='img/imagen1.jpeg') }}" alt="Proyecto">
+            <img src="{{ url_for('static', filename='img/imagen3.jpeg') }}" alt="Proyecto">
+            <img src="{{ url_for('static', filename='img/imagen4.jpeg') }}" alt="Proyecto">
+            <img src="{{ url_for('static', filename='img/imagen5.jpeg') }}" alt="Proyecto">
+            <img src="{{ url_for('static', filename='img/imagen6.jpeg') }}" alt="Proyecto">
+            <img src="{{ url_for('static', filename='img/imagen7.jpeg') }}" alt="Proyecto">
+            <img src="{{ url_for('static', filename='img/imagen9.jpeg') }}" alt="Proyecto">
+
+        </div>
+
+        <!-- ================= DERECHA: PROYECTOS ================= -->
+        <div class="proyectos-lista">
+
+            <div class="proyecto-grupo">Infraestructura Vial (Carreteras)</div>
+
+            <div class="proyecto-item">
+                MEJORAMIENTO Y CREACIÓN DE CAMINO VECINAL LA PUNTA - CHUMNICSHA - ROBLEPAMPA - YANAYACU
+                <span>Andabamba - Santa Cruz - Cajamarca</span>
+            </div>
+
+            <div class="proyecto-item">
+                MEJORAMIENTO CARRETERA PUNTO CUARTO - LOS GUANILOS - SOLECAPE
+                <span>Mochumí - Lambayeque</span>
+            </div>
+
+            <div class="proyecto-item">
+                CONSTRUCCIÓN DE PISTAS Y VEREDAS EN CATACHE
+                <span>Santa Cruz - Cajamarca</span>
+            </div>
+
+            <div class="proyecto-item">
+                REHABILITACIÓN CARRETERA CRUZCONGA - CALCONGA - CAJÉN
+                <span>Celendín - Cajamarca</span>
+            </div>
+
+            <div class="proyecto-item">
+                MEJORAMIENTO BICAPA CATACHE - LA LUCMA
+                <span>Santa Cruz - Cajamarca</span>
+            </div>
+
+            <div class="proyecto-item">
+                CREACIÓN TRANSITABILIDAD CALABOCILLO - PAN DE AZÚCAR
+                <span>Cutervo - Cajamarca</span>
+            </div>
+
+            <div class="proyecto-item">
+                REHABILITACIÓN CAMINOS VECINALES JAYANCA
+                <span>Lambayeque</span>
+            </div>
+
+            <div class="proyecto-item">
+                REPARACIÓN VÍAS URBANAS CHIRINOS
+                <span>San Ignacio - Cajamarca</span>
+            </div>
+
+            <div class="proyecto-item">
+                MEJORAMIENTO VÍAS GUZMANGO
+                <span>Contumazá - Cajamarca</span>
+            </div>
+
+            <div class="proyecto-item">
+                CREACIÓN VEREDAS SAN NICOLÁS
+                <span>Zaña - Lambayeque</span>
+            </div>
+
+            <div class="proyecto-grupo">
+                Infraestructura Educativa y Edificaciones
+            </div>
+
+            <div class="proyecto-item">
+                MEJORAMIENTO I.E.S. JOSÉ GABRIEL CONDORCANQUI
+                <span>Yauyucan - Santa Cruz</span>
+            </div>
+
+            <div class="proyecto-item">
+                MEJORAMIENTO MERCADO DE ABASTOS SANTA CRUZ
+                <span>Santa Cruz</span>
+            </div>
+
+            <div class="proyecto-item">
+                MEJORAMIENTO CENTRO DE SALUD ANGUÍA
+                <span>Chota</span>
+            </div>
+
+            <div class="proyecto-item">
+                SALDO OBRA EDUCACIÓN INICIAL NIEVA
+                <span>Amazonas</span>
+            </div>
+
+            <div class="proyecto-item">
+                MEJORAMIENTO SERVICIO EDUCATIVO HUABAL
+                <span>Jaén</span>
+            </div>
+
+            <div class="proyecto-item">
+                MEJORAMIENTO I.E. PAMPA VERDE
+                <span>Namballe</span>
+            </div>
+
+            <div class="proyecto-grupo">
+                Saneamiento Básico
+            </div>
+
+            <div class="proyecto-item">
+                AGUA POTABLE Y ALCANTARILLADO NARANJO YACU
+                <span>Cutervo</span>
+            </div>
+
+            <div class="proyecto-item">
+                SISTEMA AGUA POTABLE HUABAL
+                <span>Jaén</span>
+            </div>
+
+            <div class="proyecto-item">
+                AGUA POTABLE CON BIODIGESTORES
+                <span>Saucepampa</span>
+            </div>
+
+            <div class="proyecto-item">
+                AGUA POTABLE CASERÍO EL ARENAL
+                <span>Cutervo</span>
+            </div>
+
+            <div class="proyecto-item">
+                SISTEMA AGUA POTABLE USHUSQUE GRANDE
+                <span>Santa Cruz</span>
+            </div>
+
+            <div class="proyecto-item">
+                SANEAMIENTO BÁSICO COCHABAMBA
+                <span>Chota</span>
+            </div>
+
+            <div class="proyecto-item">
+                DEFENSA RIBEREÑA RÍO CAJONES
+                <span>Jaén</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section id="contacto"></section>
+
+{% endblock %}

@@ -1,3 +1,4 @@
+
 /* =========================
    RESET GENERAL
 ========================= */
@@ -48,6 +49,8 @@ a {
 .top-left span {
     display: inline-flex;
     align-items: center;
+    color: white;
+    font-weight: 400;
 }
 
 .top-left i {
@@ -68,7 +71,7 @@ a {
 
 .link-whatsapp {
     color: white;
-    font-weight: 700;
+    font-weight: 400;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -82,27 +85,94 @@ a {
 .link-whatsapp:hover {
     color: #25D366;
 }
+/* =========================
+   CORREO HOVER
+========================= */
+
+.email-link span {
+    color: white;
+    font-weight: 400;
+    transition: 0.3s ease;
+}
+
+.email-link i {
+    color: #ff4c1e;
+    transition: 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+
+.email-link:hover span {
+    color: #0b79e0;
+}
+
+.email-link:hover i {
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   UBICACIÓN HOVER
+========================= */
+
+.location-link span {
+    color: white;
+    font-weight: 400;
+    transition: 0.3s ease;
+}
+
+.location-link i {
+    color: #ff4c1e;
+    transition: 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+
+.location-link:hover span {
+    color: #0b79e0;
+}
+
+.location-link:hover i {
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+/* =========================
+   REDES TOP BAR
+========================= */
 
 .top-right {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 9px;
 }
 
-.top-right img {
-    width: 31px;
-    height: 31px;
-    object-fit: contain;
+.top-right a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.10);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     transition: 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.08);
 }
 
-.top-right img:hover {
-    transform: scale(1.15) rotate(3deg);
+.top-right a i {
+    font-size: 14px;
+}
+
+.top-right a:hover {
+    background: #ff4c1e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(255, 76, 30, 0.30);
 }
 
 /* =========================
    NAVBAR
 ========================= */
+
 .navbar {
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(12px);
@@ -118,7 +188,10 @@ a {
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
+
 .logo {
     display: flex;
     align-items: center;
@@ -145,7 +218,7 @@ a {
 }
 
 .logo-texto h1 {
-    font-size: 11px;
+    font-size: 13px;
     color: #063b46;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
@@ -166,19 +239,46 @@ a {
     line-height: 1;
 }
 
+/* TEXTO CHICLAYO */
+
 .logo-linea {
     margin: 0;
-    font-size: 12px;
+    font-size: 13px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: 800;
     color: #063b46;
     text-align: center;
     display: block;
     line-height: 1;
     white-space: nowrap;
+    letter-spacing: 0.5px;
+}
+.logo-linea {
+    margin: 0;
+    font-size: 13px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    color: #063b46;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
-/* MENÚ */
+.logo-linea::before,
+.logo-linea::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: #063b46
+    ;
+    opacity: 0.9;
+}
+/* =========================
+   MENÚ
+========================= */
+
 .navbar nav {
     display: flex;
     align-items: center;
@@ -192,6 +292,9 @@ a {
     font-size: 15px;
     letter-spacing: 0.2px;
     padding-bottom: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
 }
 
 .navbar nav a::after {
@@ -216,7 +319,26 @@ a {
     width: 100%;
 }
 
-/* BOTÓN INTRANET */
+/* =========================
+   ICONOS MENU
+========================= */
+
+.navbar nav a i {
+    font-size: 14px;
+    color: #ff4c1e;
+    transition: 0.3s ease;
+}
+
+.navbar nav a:hover i,
+.navbar nav a.active i {
+    color: #ff4c1e;
+    transform: translateY(-1px);
+}
+
+/* =========================
+   BOTÓN INTRANET
+========================= */
+
 .btn-intranet {
     background: linear-gradient(135deg, #ff4c1e, #ff6a3d);
     color: white;
@@ -236,7 +358,10 @@ a {
     box-shadow: 0 12px 24px rgba(255, 76, 30, 0.35);
 }
 
-/* BOTÓN MENÚ MÓVIL */
+/* =========================
+   BOTÓN MENÚ MÓVIL
+========================= */
+
 .menu-toggle {
     display: none;
     font-size: 28px;
@@ -247,10 +372,12 @@ a {
 /* =========================
    FOOTER PROFESIONAL
 ========================= */
+
 .footer {
     background:
         radial-gradient(circle at top left, rgba(255, 76, 30, 0.13), transparent 30%),
         linear-gradient(135deg, #061c25, #0a2c38);
+
     color: white;
     padding: 34px 32px 16px;
     margin-top: 35px;
@@ -312,6 +439,7 @@ a {
 }
 
 /* ICONOS MODERNOS */
+
 .footer-content .item > i {
     width: 36px;
     height: 36px;
@@ -339,7 +467,10 @@ a {
     line-height: 1.45;
 }
 
-/* TELÉFONOS */
+/* =========================
+   TELÉFONOS
+========================= */
+
 .footer-telefonos {
     display: flex;
     flex-direction: column;
@@ -375,7 +506,10 @@ a {
     transform: translateY(-2px);
 }
 
-/* REDES */
+/* =========================
+   REDES FOOTER
+========================= */
+
 .footer-social {
     display: flex;
     align-items: center;
@@ -406,6 +540,7 @@ a {
 /* =========================
    LIBRO DE RECLAMACIONES
 ========================= */
+
 .libro-reclamaciones {
     background: linear-gradient(135deg, rgba(255, 76, 30, 0.13), rgba(255, 255, 255, 0.035)) !important;
     border: 1px solid rgba(255, 76, 30, 0.25) !important;
@@ -450,6 +585,7 @@ a {
 /* =========================
    FOOTER INFERIOR
 ========================= */
+
 .footer-bottom {
     width: 100%;
     margin-top: 30px;
@@ -472,6 +608,7 @@ a {
 /* =========================
    WHATSAPP FLOTANTE
 ========================= */
+
 .whatsapp-float {
     position: fixed;
     width: 55px;
